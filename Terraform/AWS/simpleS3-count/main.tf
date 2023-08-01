@@ -1,3 +1,11 @@
+locals {
+  default_tags = {
+    #provisionedby      = "<%=username%>"
+    #environment        = "<%=customOptions.environment%>"
+    ManagementTool     = "Terraform"
+    ManagementPlatform = "Morpheus"
+  }
+}
 
 resource "aws_s3_bucket" "s3" {
     count = var.bucket_count
